@@ -6,11 +6,11 @@
  * @author TakamiChie
  * @link http://onpu-tamago.net/
  * @license http://opensource.org/licenses/MIT
- * @version 1.0
+ * @version 1.1
  */
-class Pico_MD_LinkExternal {
+class Pico_MD_LinkExternal extends AbstractPicoPlugin {
 
-	public function after_parse_content(&$content)
+	public function onContentParsed(&$content)
 	{
   	$content = preg_replace('/<a(.*?)>ex:(.*?)<\/a>/', '<a$1 rel="external" target="_blank">$2</a>', $content);
 	}
