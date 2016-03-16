@@ -10,6 +10,8 @@
  */
 class Pico_MD_LinkExternal extends AbstractPicoPlugin {
 
+  protected $enabled = false;
+
 	public function onContentParsed(&$content)
 	{
   	$content = preg_replace('/<a(.*?)>ex:(.*?)<\/a>/', '<a$1 rel="external" target="_blank">$2</a>', $content);
